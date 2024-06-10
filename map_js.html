@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Map with Marker at Brooklyn Museum (JS)</title>
+    <style>
+      /* Set the size of the map container */
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <!-- replace api key (i did not create a server for simple test site) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=(PUT KEY HERE)"></script>
+    <script>
+      function initMap() {
+        // The location of Brooklyn Museum
+        var brooklynMuseum = { lat: 40.671206, lng: -73.963631 };
+
+        // Create the map centered at Brooklyn Museum
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: brooklynMuseum,
+          mapId: "f54cc546842d48e9",
+        });
+
+        // Add a marker at Brooklyn Museum
+        var marker = new google.maps.Marker({
+          position: brooklynMuseum,
+          map: map,
+          title: "Brooklyn Museum",
+        });
+      }
+    </script>
+  </head>
+  <body onload="initMap()">
+    <div id="map"></div>
+  </body>
+</html>

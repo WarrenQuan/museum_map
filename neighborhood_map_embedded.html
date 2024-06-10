@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neighborhood Google Map at Brooklyn Museum (Embedded)</title>
+  </head>
+  <body id="map">
+    <!-- No way to hide the top bar other than fixing the top, but results in hiding direction panel when clicking through locations-->
+    <iframe
+      style="
+        position: relative;
+        clip-path: polygon(0% 12%, 100% 12%, 100% 100%, 0% 100%);
+        top: -1em;
+      "
+      src="https://www.google.com/maps/d/u/0/embed?mid=1PEsvvV5_N5PIceTYL67phHOrUpzbjzM&ehbc=2E312F&noprof=1"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <!-- With top bar-->
+    <iframe
+      src="https://www.google.com/maps/d/u/0/embed?mid=1PEsvvV5_N5PIceTYL67phHOrUpzbjzM&ehbc=2E312F&noprof=1"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neighborhood Google Map at Brooklyn Museum (JS)</title>
+    <style>
+      /* Set the size of the map container */
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <!-- replace api key (i did not create a server for this simple test site) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=(PUT KEY HERE)"></script>
+    <script>
+      let map;
+
+      async function initMap() {
+        // Request needed libraries.
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement, PinElement } =
+          await google.maps.importLibrary("marker");
+
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: new google.maps.LatLng(40.671206, -73.963631),
+          zoom: 16,
+          mapId: "f54cc546842d48e9",
+        });
+
+        const iconBase =
+          "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
+        //   placeholder icons from flaticon.com
+        const icons = {
+          bkm: {
+            icon: "./icons_png/bkm.png",
+          },
+          restaurant: {
+            icon: "./icons_png/restaurant.png",
+          },
+          park: {
+            icon: "./icons_png/park.png",
+          },
+          arts: {
+            icon: "./icons_png/theater.png",
+          },
+          bar: {
+            icon: "./icons_png/bar.png",
+          },
+          attraction: {
+            icon: "./icons_png/attraction.png",
+          },
+        };
+        // if expand outside demo: read from csv file
+        const features = [
+          {
+            position: new google.maps.LatLng(40.671206, -73.963631),
+            type: "bkm",
+          },
+          {
+            position: new google.maps.LatLng(40.679379, -73.964073),
+            type: "attraction",
+          },
+          {
+            position: new google.maps.LatLng(40.659062, -73.966233),
+            type: "attraction",
+          },
+          {
+            position: new google.maps.LatLng(40.677435, -73.963995),
+            type: "bar",
+          },
+          {
+            position: new google.maps.LatLng(40.672243, -73.957831),
+            type: "bar",
+          },
+          {
+            position: new google.maps.LatLng(40.676313, -73.963073),
+            type: "bar",
+          },
+          {
+            position: new google.maps.LatLng(40.679999, -73.945776),
+            type: "arts",
+          },
+          {
+            position: new google.maps.LatLng(40.686507, -73.977692),
+            type: "arts",
+          },
+          {
+            position: new google.maps.LatLng(40.688411, -73.979057),
+            type: "arts",
+          },
+          {
+            position: new google.maps.LatLng(40.66964, -73.9622),
+            type: "park",
+          },
+          {
+            position: new google.maps.LatLng(40.673593, -73.967471),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.67, -73.95847),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.679785, -73.965168),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.676656, -73.963349),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.672677, -73.962428),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.671992, -73.960969),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.673449, -73.963214),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.675101, -73.963471),
+            type: "restaurant",
+          },
+          {
+            position: new google.maps.LatLng(40.673674, -73.960755),
+            type: "restaurant",
+          },
+        ];
+
+        for (let i = 0; i < features.length; i++) {
+          const iconImage = document.createElement("img");
+
+          iconImage.src = icons[features[i].type].icon;
+        
+          iconSize = "30px"
+
+          if(features[i].type === "bkm")
+            iconSize = "50px"
+          
+          iconImage.style.width = iconSize;
+          iconImage.style.height = iconSize;
+
+          const marker = new google.maps.marker.AdvancedMarkerElement({
+            map,
+            position: features[i].position,
+            content: iconImage,
+          });
+        }
+      }
+
+      initMap();
+    </script>
+  </head>
+  <body onload="initMap()">
+    <div id="map"></div>
+  </body>
+</html>
