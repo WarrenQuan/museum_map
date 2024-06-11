@@ -11,7 +11,14 @@ Throughout testing, I researched two different methods of integrating Google Map
 *Prototype of My Neighborhood Embedded on Website (Without Topbar)*
 
 ## JS Implementation
-Write Later
+Developers can also create their own Google Maps through code and the Maps Javscript API, which enables more customability. However, this complicates maintainability and requires more steps. To get started, an API key must be created through the Google Maps Platform Credentials page. [Refer to the following page for initial steps.](https://developers.google.com/maps/documentation/embed/quickstart#api-key).
+
+Afterward, Google Maps allows for customizing and filtering what to show with the base map, opposed to the eight styles available for GoogleMyMaps. This can be manipulated through [JSON styling wizard Google provides](https://mapstyle.withgoogle.com/), [third party websites like Snazzy Maps](https://snazzymaps.com/explore), or [using the now recommended Cloud Console and linking a specific mapId](https://developers.google.com/maps/documentation/maps-static/cloud-customization). The file with the JS methods uses the recommended Cloud Console method following the documentation steps. 
+
+Afterward, all markers has to be manually added through code in Longitude and Latitude. [Developers can add custom markers with editable sizes for each](https://developers.google.com/maps/documentation/javascript/custom-markers). If this method is developed further, the file and code should read from a CSV file or database for best maintainability practice, but the code currently stores the information through an array for initial prototype. [To make these markers interactable, additional title and content values are needed alongside an event listener (not implemented in current prototype).](https://developers.google.com/maps/documentation/javascript/advanced-markers/accessible-markers).
+
+Although this allows for more customability and flexibility with how we want the map appears to users, the JS implementation is not recommended due to more difficult code maintability. Meanwhile, GoogleMyMaps can allow for all staff members to contribute their locations and allow for the map to update dynamically.
+
 
 ## Google Maps Link: Your Location to Brooklyn Museum
 MoMA has a Get directions to MoMa link which goes from Your Location to MoMa. Similarly, this can be created for the Brooklyn Museum with the link: https://www.google.com/maps/dir/?api=1&destination=Brooklyn+Museum&destination_place_id=ChIJyTmcRApbwokR-oXJRqpVI8Y
