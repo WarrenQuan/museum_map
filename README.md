@@ -23,7 +23,7 @@ Although this allows for more customizability and flexibility with how we want t
 *Prototype of My Neighborhood Using JS*
 
 ## Google Maps Link: Your Location to Brooklyn Museum
-MoMA has a Get directions to MoMa link which goes from Your Location to MoMa. Similarly, this can be created for the Brooklyn Museum with the link: https://www.google.com/maps/dir/?api=1&destination=Brooklyn+Museum&destination_place_id=ChIJyTmcRApbwokR-oXJRqpVI8Y. This should be added to the "Get Directions" button.
+MoMA has a Get directions to MoMa link which goes from [Your Location to MoMa](https://www.google.com/maps/dir/?api=1&destination=MoMA&destination_place_id=ChIJKxDbe_lYwokRVf__s8CPn-o). Similarly, this can be created for the Brooklyn Museum with the link: https://www.google.com/maps/dir/?api=1&destination=Brooklyn+Museum&destination_place_id=ChIJyTmcRApbwokR-oXJRqpVI8Y. This should be added to the "Get Directions" button.
 
 - [api=1 specifies Maps URLs API is being used](https://developers.google.com/maps/documentation/urls/get-started)
 - [destination=Brooklyn+Museum specifies a URL encoded version of the destination](https://developers.google.com/maps/documentation/urls/get-started#parameters)
