@@ -1,6 +1,6 @@
-# Museum Map Testing and Research 
+# Museum Map Prototyping and Research 
 
-Throughout testing, I researched two different methods of integrating Google Maps into a website to display a single location and neighborhood attractions with custom styles and markers. 
+Throughout prototyping, I researched two different methods of integrating Google Maps into a website to display a single location and neighborhood attractions with custom styles and markers. 
 
 1. Embedded Link with Google My Maps (recommended for final implementation and simple future maintainability)
 2. JS implementation of Google Maps with the [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript).
