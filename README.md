@@ -5,9 +5,6 @@ Throughout testing, I researched two different methods of integrating Google Map
 1. Embedded Link with Google My Maps (recommended for final implementation and simple future maintainability)
 2. JS implementation of Google Maps with the [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript).
 
-## Benchmarking
-Market research was done in comparison to museums locally in New York City, nationwide, and international museums. 
-
 ## Embedded Links (Recommended)
 [Google My Maps](https://www.google.com/maps/d/u/0/) allows users to create and share their own maps with custom markers through an accessible UI, which can then be shared with other users. By manually adding a location or importing a spreadsheet with addresses and details, users can quickly add locations. Limitations include a non-removable top bar showing when embedded in the webpage (without styling manipulation) and only nine different base map styles. An [example map](https://www.google.com/maps/d/u/0/edit?mid=1PEsvvV5_N5PIceTYL67phHOrUpzbjzM&usp=sharing) was made for this prototype. Refer to map_embedded.html and neighborhood_map_embedded.html for an example HTML website.
 ![image](https://drive.google.com/uc?id=1VOOdSIpr7TB5XEGQTqzOy7ZeSk63PHfT)
@@ -23,7 +20,7 @@ Afterward, all markers have to be manually added through code in Longitude and L
 Although this allows for more customizability and flexibility with how we want the map to appear to users, the JS implementation is not recommended due to more difficult code maintainability. Meanwhile, GoogleMyMaps can allow for all staff members to contribute their locations and allow for the map to update dynamically.
 
 ![image](https://drive.google.com/uc?id=18qv1d_PIj7yDi4rLzVvJpmVTB1GPMOtx)
-*Prototype of My Neighborhood Using JS (Without Topbar)*
+*Prototype of My Neighborhood Using JS*
 
 ## Google Maps Link: Your Location to Brooklyn Museum
 MoMA has a Get directions to MoMa link which goes from Your Location to MoMa. Similarly, this can be created for the Brooklyn Museum with the link: https://www.google.com/maps/dir/?api=1&destination=Brooklyn+Museum&destination_place_id=ChIJyTmcRApbwokR-oXJRqpVI8Y. This should be added to the "Get Directions" button.
@@ -31,3 +28,65 @@ MoMA has a Get directions to MoMa link which goes from Your Location to MoMa. Si
 - [api=1 specifies Maps URLs API is being used](https://developers.google.com/maps/documentation/urls/get-started)
 - [destination=Brooklyn+Museum specifies a URL encoded version of the destination](https://developers.google.com/maps/documentation/urls/get-started#parameters)
 - destination_place_id=ChIJyTmcRApbwokR-oXJRqpVI8Y, every location has a unique [place_id](https://developers.google.com/maps/documentation/places/web-service/place-id), a textual identifier that uniquely identifies a place, which ensures this map link routes to this exact location
+
+## Benchmarking
+Competitor analysis was done in comparison to museums locally in New York City in the Museums Council of New York (50+ Museums) alongside a handful of selected museums nationwide and international museums. Museums are sorted into three different categories and the focus should be on Custom Map Graphics. Prior research has been done on MoMa with its link to Google Maps. 
+  
+### Custom Map Graphics
+- [Discovery Maps](https://discoverymap.com/princeton-nj): Uses Mapbox for custom graphic map
+- [The Drawing Center](https://drawingcenter.org/visit): Stylized Google Maps
+- [Dyckman Farmhouse Museum](https://dyckmanfarmhouse.org/visit/hours-directions/): Mapbox + Google Maps
+- [Fraunces Tavern® Museum](https://www.frauncestavernmuseum.org/admissions): Stylized Google Maps
+- [Gateway National Recreation Area](https://www.nps.gov/gate/planyourvisit/maps.htm): Stylized MapBox
+- [Morris-Jumel Mansion](https://morrisjumel.org/visit/)
+- [Museum at Eldridge Street](https://www.eldridgestreet.org/visit)
+- [National Palace Museum](https://www.npm.gov.tw/Articles.aspx?sno=03009216&l=2): Graphic detailing all possible bus routes accompanied with text
+- [The Art Institute of Chicago](https://www.artic.edu/visit)   
+- [Solomon R. Guggenheim Museum](https://www.guggenheim.org/plan-your-visit/ideas-for-your-visit)
+    - Includes small graphic of map with the location and link to the Guggenheim Museum when clicked *Get Directions*
+    - Neighborhood section includes text recommendations with links to articles and apps (like Bloomberg Connect and NYC Tourism webpage) on activities, no visual guide**
+- [Intrepid Museum](https://intrepidmuseum.org/plan-your-visit/visitor-information)
+- [Ghibli Museum](https://ghibli-park.jp/en/directions/): Hand-drawn graphic + Google Maps embedded at bottom
+- [American Academy of Arts and Letters](https://www.artsandletters.org/visit): Can click on map graphic for Google Map link of museum
+
+### Embedded Google Maps
+- [Vatican Museums](https://www.museivaticani.va/content/museivaticani/en/info/come-raggiungerci.html)
+- [The British Museum](https://www.britishmuseum.org/visit#getting-here)
+- [The Bronx Museum](https://bronxmuseum.org/visit/)
+- [Cooper-Hewitt](https://www.cooperhewitt.org/visit/getting-here/)
+- [AS/COA New York | Americas Society/Council of the Americas](https://www.as-coa.org/art)
+- [Bayside Historical Society](https://www.baysidehistorical.org/visit-us)
+- [The Bronx Museum](https://bronxmuseum.org/visit/)
+- [Dahesh Museum of Art](https://www.daheshmuseum.org/visit/)
+- [Greenwood Museum](https://www.green-wood.com/visit/)
+- [The Grolier Club](https://www.grolierclub.org/Default.aspx?p=DynamicModule&pageid=384820&ssid=322441&vnf=1)
+- [Harbor Defense Museum](https://history.army.mil/museums/IMCOM/fortHamilton/index.html#visit)
+- [Hispanic Society Museum & Library](https://hispanicsociety.org/visit/visitor-information/)
+- [International Center of Photography](https://www.icp.org/visit)
+- [De Young Museum](https://www.famsf.org/visit/getting-to-the-de-young)
+- [Japan Society Gallery](https://japansociety.org/about/visit-us/)
+- [Tenement Museum](https://www.tenement.org/plan-a-visit/)
+- [MoMa PS1](https://www.momaps1.org/visit)
+- [Museum of the City of New York](https://www.mcny.org/visit)
+- [Museum at the Fashion Institute of Technology](https://www.fitnyc.edu/museum/visit/index.php)
+- [Museum of Food and Drink in Brooklyn](https://www.mofad.org/location)
+
+### Text Descriptions
+- [Alice Austen House Museum](https://aliceausten.org/planyourvisit/)
+- [Alley Pond Environmental Center](https://www.alleypond.org/your-visit.html): does link to PDF [park map](https://www.alleypond.org/uploads/1/2/8/3/128396335/alley-pond-park-trail-guide__57d311db0b919_1.pdf) for walking
+- [American Folk Art Museum](https://folkartmuseum.org/news/visitor-guidelines/)
+- [American Museum of Natural History](https://www.amnh.org/plan-your-visit)
+- [American Numismatic Society](https://www.google.com/search?q=the+american+numismatic+society+visit&sca_esv=ee550f040f73c7f6&sca_upv=1&sxsrf=ADLYWIKi_GZmPorZDh_0SZyOPvjYGcnOzA%3A1718130527241&ei=X5doZvy4Du2hptQPs8SKqAQ&ved=0ahUKEwi85IP-ltSGAxXtkIkEHTOiAkUQ4dUDCBA&uact=5&oq=the+american+numismatic+society+visit&gs_lp=Egxnd3Mtd2l6LXNlcnAiJXRoZSBhbWVyaWNhbiBudW1pc21hdGljIHNvY2lldHkgdmlzaXQyBRAhGKABMgUQIRigATIFECEYoAEyBRAhGKABSLMGUERYrwVwAXgBkAEAmAF7oAGdBKoBAzQuMrgBA8gBAPgBAZgCB6ACrwTCAgoQABiwAxjWBBhHwgINEAAYsAMY1gQYRxjJA8ICDhAAGIAEGLADGJIDGIoFwgIFEAAYgATCAgYQABgWGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIFECEYqwLCAgUQIRifBZgDAIgGAZAGCZIHAzUuMqAH5CA&sclient=gws-wiz-serp)
+- [Asia Society Museum](https://asiasociety.org/new-york/plan-your-visit)
+- [NY Botanical Garden](https://www.nybg.org/visit/): has garden map
+- [Brooklyn Children’s Museum](https://www.brooklynkids.org/visit/)
+- [Center for Jewish History](https://www.cjh.org/visit/plan-your-visit)
+- [MET](https://www.metmuseum.org/plan-your-visit)
+- [The Frick Collection](https://www.frick.org/visit)
+- [The Jewish Museum](https://thejewishmuseum.org/visit)
+- [Merchant’s House Museum](https://merchantshouse.org/visit/)
+- [The Morgan Library & Museum](https://www.themorgan.org/visit)
+- [Mount Vernon Hotel Museum & Garden](https://mvhm.org/visit/)
+- [El Museo del Barrio](https://www.elmuseo.org/plan-your-visit/)
+- [Museum of Arts and Design](https://madmuseum.org/visit)
+- [Museum of Chinese in America](https://www.mocanyc.org/visit/museum-virtual-tour/)
